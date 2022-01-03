@@ -1,0 +1,148 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.cas_profile.body
+    - field.field.node.cas_profile.field_backsplash
+    - field.field.node.cas_profile.field_education
+    - field.field.node.cas_profile.field_email
+    - field.field.node.cas_profile.field_flair
+    - field.field.node.cas_profile.field_image
+    - field.field.node.cas_profile.field_last_name
+    - field.field.node.cas_profile.field_lehigh_id
+    - field.field.node.cas_profile.field_link
+    - field.field.node.cas_profile.field_office
+    - field.field.node.cas_profile.field_positions
+    - field.field.node.cas_profile.field_research
+    - field.field.node.cas_profile.field_sub_page_ref
+    - field.field.node.cas_profile.field_teaching
+    - field.field.node.cas_profile.field_telephone
+    - image.style.square_profile
+    - node.type.cas_profile
+  module:
+    - entity_reference_revisions
+    - link
+    - media
+    - text
+    - user
+id: node.cas_profile.default
+targetEntityType: node
+bundle: cas_profile
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_backsplash:
+    type: media_thumbnail
+    weight: 12
+    label: hidden
+    settings:
+      image_style: wide_ratio
+      image_link: ''
+    third_party_settings: {  }
+    region: content
+  field_education:
+    weight: 6
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_email:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_flair:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: square_profile
+      image_link: ''
+    third_party_settings: {  }
+    type: media_thumbnail
+    region: content
+  field_link:
+    weight: 10
+    label: hidden
+    settings:
+      trim_length: 80
+      target: _blank
+      url_only: false
+      url_plain: false
+      rel: '0'
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_office:
+    weight: 5
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_positions:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_research:
+    type: entity_reference_revisions_entity_view
+    weight: 7
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_sub_page_ref:
+    weight: 11
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_teaching:
+    weight: 9
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_telephone:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_last_name: true
+  field_lehigh_id: true

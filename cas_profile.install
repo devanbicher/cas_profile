@@ -1,0 +1,23 @@
+<?php 
+
+use Drupal\block\Entity\Block;
+
+/**
+ * Update block precontent to be exlcuded on profiles and subpages 
+*/
+function cas_profile_install() {
+    
+    $block = Block::load('precontent');
+    $visibility = $block->getVisibility();
+    $visibility['entity_bundle:node']['context_mapping']['node'] = "@node.node_route_context:node";
+
+    $block->setVisibilityConfig('entity_bundle:node',
+                 array('id' => 'entity_bundle:node',
+                 'bundles' => array('cas_profile' => "cas_profile", 'profile_sub_page' => "profile_sub_page"),
+                 'negate' => true,
+                 'context_mapping' => $visibility['entity_bundle:node']['context_mapping']
+                 )
+            );
+
+    $block->save();
+}

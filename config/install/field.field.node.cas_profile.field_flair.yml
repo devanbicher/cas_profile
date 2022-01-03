@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_flair
+    - node.type.cas_profile
+id: node.cas_profile.field_flair
+field_name: field_flair
+entity_type: node
+bundle: cas_profile
+label: Flair
+description: 'This field will show up right above your name. For example, you can add <strong>Professor</strong> before your name'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
